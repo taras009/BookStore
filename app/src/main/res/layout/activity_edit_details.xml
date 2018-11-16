@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    tools:context=".EditProductDetails">
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <!-- Label -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:layout_width="wrap_content"
+                android:text="@string/category_overview" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_minus"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="decreaseQuantity"
+                    android:text="@string/minus_value" />
+
+                <Button
+                    android:id="@+id/button_plus"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="increaseQuantity"
+                    android:text="@string/plus_value" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
+            <!-- Name field -->
+            <EditText
+                android:id="@+id/edit_book_name"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_book_name"
+                android:inputType="textCapWords" />
+
+            <!-- Price field -->
+            <EditText
+                android:id="@+id/edit_book_price"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_book_price"
+                android:inputType="number" />
+
+            <!-- quantity field -->
+            <EditText
+                android:id="@+id/edit_book_quantity"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_book_quantity"
+                android:inputType="number" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!-- Supplier Info category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:id="@+id/supplier_info"
+            style="@style/CategoryStyle"
+            android:text="@string/category_supplier_info" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
+            <!-- Supplier info field -->
+            <EditText
+                android:id="@+id/edit_book_supplier"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_book_supplier"
+                android:inputType="textCapWords" />
+
+            <EditText
+                android:id="@+id/edit_supplier_number"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_supplier_number"
+                android:inputType="phone" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:onClick="deleteAllData"
+            android:text="@string/delete_data" />
+
+        <Button
+            android:id="@+id/call_supplier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/delete_button"
+            android:layout_alignParentRight="true"
+            android:onClick="callSupplier"
+            android:text="@string/call_supplier" />
+    </RelativeLayout>
+</LinearLayout>
